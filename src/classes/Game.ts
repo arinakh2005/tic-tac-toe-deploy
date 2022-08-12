@@ -1,8 +1,8 @@
-import { GameMap } from "./GameMap.js";
-import {gameMark, gameMode, playerType} from "../constants/constants.js";
-import {Player} from "./Player.js";
-import {ComputerPlayer} from "./ComputerPlayer.js";
-import {restartGame} from "../main/main.js";
+import { GameMap } from "./GameMap";
+import {gameMark, gameMode, playerType} from "../constants/constants";
+import {Player} from "./Player";
+import {ComputerPlayer} from "./ComputerPlayer";
+import {restartGame} from "../main";
 
 export class Game {
     private mode: number;
@@ -10,7 +10,7 @@ export class Game {
     private firstPlayer: Player;
     private secondPlayer: Player | ComputerPlayer;
     private playerWhoMadeLastStep: Player | ComputerPlayer;
-    lastRole: any;
+    lastRole: unknown;
 
     constructor() {
         this.lastRole = gameMark.circle;
@@ -60,14 +60,14 @@ export class Game {
         return this.playerWhoMadeLastStep;
     }
 
-    createNewGame(haveUnfinishedGame?: boolean) {
+    startNewGame(haveUnfinishedGame?: boolean) {
         if (haveUnfinishedGame) {
             let continueUnfinishedGame = confirm(`У Вас є незавершена гра. Продовжити грати?`);
             if (continueUnfinishedGame) {
                 this.resumeGameFromLocalStorage();
             } else {
                 window.localStorage.clear();
-                this.createNewGame();
+                this.startNewGame();
             }
         } else {
             let select = <HTMLInputElement>document.getElementById("game-area");
@@ -181,6 +181,10 @@ export class Game {
 
     getDrawMessage() {
         alert("Нічия");
+    }
+
+    clearGame() {
+        this.gameMap.clearGameMap();
     }
 
     putOnLocalStorage(game: this) {

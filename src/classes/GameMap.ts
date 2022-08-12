@@ -1,6 +1,6 @@
-import {Cell} from "./Cell.js";
-import {gameMark, maxMapSize, minMapSize, minNumberOfCellsForWin} from "../constants/constants.js";
-import { doStep } from "../main/main.js";
+import {Cell} from "./Cell";
+import {gameMark, maxMapSize, minMapSize, minNumberOfCellsForWin} from "../constants/constants";
+import { doStep } from "../main";
 
 export class GameMap {
 
@@ -51,11 +51,13 @@ export class GameMap {
         const table = document.querySelector('table');
 
         for (let i = 0; i < this.size; i++) {
-            const tr = document.createElement('tr');
+            const tr = document.createElement('div');
+            tr.classList.add("tr");
 
             for (let j = 0; j < this.size; j++) {
-                const td = document.createElement('td');
+                const td = document.createElement('div');
                 td.classList.add("cell");
+                td.classList.add("td");
                 let id = `cell${((i * this.size) + j)}`;
                 td.setAttribute('id', `${id}`);
                 
