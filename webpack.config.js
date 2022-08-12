@@ -9,16 +9,16 @@ module.exports = {
             {
                 test: /\.ts$/,
                 use: 'ts-loader',
-                include: [path.resolve(__dirname, 'src')]
+                include: [path.resolve(__dirname, 'src')],
             }
         ]
     },
     resolve: {
-        extensions: ['.ts', '.js']
+        extensions: ['.ts', '.js'],
     },
     output: {
         publicPath: 'public',
         filename: 'bundle.js',
-        path: path.resolve(__dirname, 'public')
-    }
-}
+        path: path.resolve(__dirname, 'public'),
+    },
+};

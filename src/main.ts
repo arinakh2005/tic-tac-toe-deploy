@@ -1,6 +1,6 @@
 'use strict'
 
-import {Game} from "./classes/Game";
+import { Game } from "./classes/Game";
 
 let game: Game;
 
@@ -28,5 +28,4 @@ document.getElementById("game-area").addEventListener("change", restartGame);
 
 document.getElementById("number-of-cells-for-win").addEventListener("change", restartGame);
 document.getElementById("game-mode").addEventListener("change", restartGame);
-
 
