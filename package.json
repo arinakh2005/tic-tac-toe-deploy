@@ -9,16 +9,8 @@
     "start": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/arinakh2005/Tic-tac-toe-With-TS-.git"
-  },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/arinakh2005/Tic-tac-toe-With-TS-/issues"
-  },
-  "homepage": "https://github.com/arinakh2005/Tic-tac-toe-With-TS-#readme",
   "devDependencies": {
     "ts-loader": "^9.3.1",
     "typescript": "^4.7.4",
