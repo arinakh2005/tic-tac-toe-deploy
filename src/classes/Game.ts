@@ -117,7 +117,7 @@ export class Game {
     doStepInModePlayerWithPlayer(id: string) {
         let cell = document.getElementById(id);
         this.gameMap.getOccupiedCells().push(id);
-        let i = +(id.slice(4, 6));
+        let i = +(id.slice(4));
         this.getGameMap().getAllCells()[i].setCellOccupied();
 
         if (this.playerWhoMadeLastStep.getPlayerType() === this.firstPlayer.getPlayerType()) {
@@ -136,7 +136,7 @@ export class Game {
         if (this.playerWhoMadeLastStep.getPlayerType() === this.secondPlayer.getPlayerType()) {
             let elem = <HTMLInputElement>document.getElementById(id);
             elem.innerHTML = `<img src="images/${gameMark.cross}.png" alt="${gameMark.cross}">`;
-            let i = +(id.slice(4, 6));
+            let i = +(id.slice(4));
             this.gameMap.getAllCells()[i].setCellOccupied();
             this.gameMap.getAllCells()[i].setCellOccupiedByElement(gameMark.cross);
             this.playerWhoMadeLastStep = this.firstPlayer;

@@ -134,7 +134,7 @@ export class GameMap {
     }
 
     isCellAvailableForStep(idHTML: string) {
-        let id = +(idHTML.slice(4,6));
+        let id = +(idHTML.slice(4));
         if (this.allCells[id].isCellOccupied()){
             return true;
         }
